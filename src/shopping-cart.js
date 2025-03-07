@@ -1,4 +1,4 @@
-let products = {}
+export let products = {}
 
 export function displayProducts() {
   console.log(products)

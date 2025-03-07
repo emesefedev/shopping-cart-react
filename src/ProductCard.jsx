@@ -3,9 +3,9 @@ import PlusMinus from "./PlusMinus"
 import { useState } from "react"
 
 import { MIN_AMOUNT, MAX_AMOUNT } from "./constants"
-import { addProduct, deleteProduct, updateQuantity } from "./shopping-cart"
+import { addProduct, deleteProduct, updateQuantity, displayProducts } from "./shopping-cart"
 
-export default function Product({pokemon, updateProductsToBuy}) {
+export default function ProductCard({pokemon, updateProductsToBuy}) {
   const [amount, setAmount] = useState(0)
   const [wantToBuy, setWantToBuy] = useState(false)
 
@@ -23,6 +23,7 @@ export default function Product({pokemon, updateProductsToBuy}) {
 
     setAmount(amount + 1)
     updateProductsToBuy(1)
+    displayProducts()
   }
 
   const decreaseAmount = () => {
@@ -42,13 +43,13 @@ export default function Product({pokemon, updateProductsToBuy}) {
   }
 
   return (
-    <div className="product">
+    <div className="product-card">
       <img className="product-img" src={pokemon.sprites.front_default} alt="top logo" />
       <p className="product-title">{pokemon.name}</p>
       <p className="product-price">{pokemon.weight}€</p>
 
       { wantToBuy 
-        ? <PlusMinus amount={amount} increase={increaseAmount} decrease={decreaseAmount}></PlusMinus>  
+        ? <PlusMinus amount={amount} increase={increaseAmount} decrease={decreaseAmount} buttonSize="24px"></PlusMinus>  
         : <button className="product-buy-button" onClick={buy}>Buy</button>
       }
       

@@ -1,5 +1,5 @@
 import { ditto, chansey, crobat, torchic, wingull, swablu, glaceon, smoliv } from "./fake-data"
-import Product from "./Product"
+import ProductCard from "./ProductCard"
 
 import { useOutletContext } from "react-router-dom"
 
@@ -12,14 +12,14 @@ export default function Home() {
       <h1 className="mb-32">Products</h1>
 
       <div className="products-container">
-        <Product pokemon={ditto} updateProductsToBuy={updateProductsToBuy}></Product>
-        <Product pokemon={chansey} updateProductsToBuy={updateProductsToBuy}></Product>
-        <Product pokemon={crobat} updateProductsToBuy={updateProductsToBuy}></Product>
-        <Product pokemon={torchic} updateProductsToBuy={updateProductsToBuy}></Product>
-        <Product pokemon={wingull} updateProductsToBuy={updateProductsToBuy}></Product>
-        <Product pokemon={swablu} updateProductsToBuy={updateProductsToBuy}></Product>
-        <Product pokemon={glaceon} updateProductsToBuy={updateProductsToBuy}></Product>
-        <Product pokemon={smoliv} updateProductsToBuy={updateProductsToBuy}></Product>
+        <ProductCard pokemon={ditto} updateProductsToBuy={updateProductsToBuy}></ProductCard>
+        <ProductCard pokemon={chansey} updateProductsToBuy={updateProductsToBuy}></ProductCard>
+        <ProductCard pokemon={crobat} updateProductsToBuy={updateProductsToBuy}></ProductCard>
+        <ProductCard pokemon={torchic} updateProductsToBuy={updateProductsToBuy}></ProductCard>
+        <ProductCard pokemon={wingull} updateProductsToBuy={updateProductsToBuy}></ProductCard>
+        <ProductCard pokemon={swablu} updateProductsToBuy={updateProductsToBuy}></ProductCard>
+        <ProductCard pokemon={glaceon} updateProductsToBuy={updateProductsToBuy}></ProductCard>
+        <ProductCard pokemon={smoliv} updateProductsToBuy={updateProductsToBuy}></ProductCard>
       </div>
     </div>
   )

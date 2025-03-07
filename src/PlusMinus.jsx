@@ -1,17 +1,17 @@
-export default function PlusMinus({amount, increase, decrease}) {
+export default function PlusMinus({amount, increase, decrease, buttonSize = "24px"}) {
   
   return (    
     <div className="plus-minus-layout">
       <button 
-        style={{minWidth: "25px", minHeight: "25px"}} 
+        style={{minWidth: buttonSize, minHeight: buttonSize}} 
         className="plus-minus-button"
         onClick={decrease}
       >
         -
       </button>
-      <p style={{minWidth: "24px", textAlign: "center"}}>{amount}</p>
+      <p style={{minWidth: buttonSize, textAlign: "center"}}>{amount}</p>
       <button 
-        style={{minWidth: "25px", minHeight: "25px"}} 
+        style={{minWidth: buttonSize, minHeight: buttonSize}} 
         className="plus-minus-button"
         onClick={increase}
       >

@@ -3,9 +3,9 @@ import PlusMinus from "./PlusMinus"
 import { useState } from "react"
 
 import { MIN_AMOUNT, MAX_AMOUNT } from "./constants"
-import { addProduct, deleteProduct, displayProducts, updateQuantity } from "./shopping-cart"
+import { addProduct, deleteProduct, updateQuantity } from "./shopping-cart"
 
-export default function Product({pokemon}) {
+export default function Product({pokemon, updateProductsToBuy}) {
   const [amount, setAmount] = useState(0)
   const [wantToBuy, setWantToBuy] = useState(false)
 
@@ -22,6 +22,7 @@ export default function Product({pokemon}) {
     else updateQuantity(pokemon.id, amount + 1)
 
     setAmount(amount + 1)
+    updateProductsToBuy(1)
   }
 
   const decreaseAmount = () => {
@@ -32,11 +33,12 @@ export default function Product({pokemon}) {
     else updateQuantity(pokemon.id, amount - 1)
 
     setAmount(amount - 1)
-    displayProducts()
+    updateProductsToBuy(-1)
   }
 
   const buy = () => {
     setWantToBuy(true)
+    increaseAmount()
   }
 
   return (

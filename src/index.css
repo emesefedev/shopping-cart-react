@@ -13,6 +13,7 @@
   --secondary-color: #DECDE6;
   --tertiary-color: #5A6ADE;
   --background-color: #111111;
+  --gray-color: #ACB4CD;
 
   color-scheme: light dark;
   color: var(--primary-color);
@@ -39,6 +40,7 @@ h1 {
 }
 
 /* NAVIGATION BAR */
+
 .nav-bar {
   background-color: var(--secondary-color);
 
@@ -68,10 +70,12 @@ h1 {
 }
 
 .link-border:hover {
+  color: var(--tertiary-color);
   border: 2px solid var(--tertiary-color);
 }
 
 /* HOME */
+
 .products-container {
   display: grid;
   gap: 32px;
@@ -111,7 +115,48 @@ h1 {
   font-size: 1.1em;
 }
 
+.product-buy-button {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  
+  border: none;
+  border-radius: 8px;
+
+  padding: 4px;
+  min-width: 50px;
+  min-height: 25px;
+}
+
+.product-buy-button:hover {
+  background-color: var(--tertiary-color);
+}
+
+/* PLUS / MINUS */
+.plus-minus-layout {
+  display: flex;
+  gap: 16px;
+
+  min-height: 25px;
+}
+
+.plus-minus-button {
+  background-color: transparent;
+  color: var(--secondary-color);
+  
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+
+  padding: 4px;
+}
+
+.plus-minus-button:hover {
+  color: var(--tertiary-color);
+  
+  border: 2px solid var(--tertiary-color);
+}
+
 /* MARGIN */
+
 .ml-auto {
   margin-left: auto;
 }

@@ -1,11 +1,22 @@
+* {
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+  --primary-color: #AC9CC5;
+  --secondary-color: #DECDE6;
+  --tertiary-color: #5A6ADE;
+  --background-color: #111111;
+
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--primary-color);
+  background-color:var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,11 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  min-width: 500px;
   min-height: 100vh;
 }
 
@@ -26,10 +38,86 @@ h1 {
   line-height: 1.1;
 }
 
+/* NAVIGATION BAR */
+.nav-bar {
+  background-color: var(--secondary-color);
+
+  width: 100%;
+  min-height: 75px;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 32px;
+  padding-left: 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+.link-home {
+  color: var(--primary-color);
+}
+
+.link-border {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.link-border:hover {
+  border: 2px solid var(--tertiary-color);
+}
+
+/* HOME */
+.products-container {
+  display: grid;
+  gap: 32px;
+  padding: 32px;
+  
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  background-color: var(--primary-color);
+  color: var(--background-color);
+
+  border-radius: 8px;
+
+  min-height: 400px;
+  padding: 24px;
+}
+
+.product-img {
+  min-width: 200px;
+}
+
+.product-title {
+  font-size: 1.3em;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+.product-price {
+  font-size: 1.1em;
+}
+
+/* MARGIN */
+.ml-auto {
+  margin-left: auto;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background-color: #ffffff;
   }
 }

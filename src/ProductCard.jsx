@@ -1,45 +1,42 @@
 import PlusMinus from "./PlusMinus"
-
 import { useState } from "react"
+import { useShoppingCartContext } from "./ShoppingCartContext"
 
-import { MIN_AMOUNT, MAX_AMOUNT } from "./constants"
-import { addProduct, deleteProduct, updateQuantity, displayProducts } from "./shopping-cart"
 
-export default function ProductCard({pokemon, updateProductsToBuy}) {
-  const [amount, setAmount] = useState(0)
+export default function ProductCard({pokemon, product}) {
+  const {
+    addProduct,
+    updateQuantity
+  } = useShoppingCartContext()
+  
+  const quantity = product?.quantity
   const [wantToBuy, setWantToBuy] = useState(false)
-
-  const increaseAmount = () => {
-    if (amount === MAX_AMOUNT) return 
-
-    if (amount === 0) { 
+  
+  const increaseQuantity = () => {
+    if (quantity === 0 || quantity == null) { 
       addProduct({
         id: pokemon.id,
         name: pokemon.name,
         quantity: 1,
         price: pokemon.weight
-      })}
-    else updateQuantity(pokemon.id, amount + 1)
+      })
+      return
+    }
 
-    setAmount(amount + 1)
-    updateProductsToBuy(1)
-    displayProducts()
+    updateQuantity(pokemon.id, quantity + 1)
   }
 
-  const decreaseAmount = () => {
-    if (amount === MIN_AMOUNT) {
-      setWantToBuy(false)
-      deleteProduct(pokemon.id)
+  const decreaseQuantity = () => {
+    if(quantity == null) {
+      return
     }
-    else updateQuantity(pokemon.id, amount - 1)
 
-    setAmount(amount - 1)
-    updateProductsToBuy(-1)
+    updateQuantity(pokemon.id, quantity - 1)
   }
 
   const buy = () => {
     setWantToBuy(true)
-    increaseAmount()
+    increaseQuantity()
   }
 
   return (
@@ -48,8 +45,8 @@ export default function ProductCard({pokemon, updateProductsToBuy}) {
       <p className="product-title">{pokemon.name}</p>
       <p className="product-price">{pokemon.weight}€</p>
 
-      { wantToBuy 
-        ? <PlusMinus amount={amount} increase={increaseAmount} decrease={decreaseAmount} buttonSize="24px"></PlusMinus>  
+      { (!product?.quantity && wantToBuy) || product?.quantity > 0
+        ? <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity} buttonSize="24px"></PlusMinus>  
         : <button className="product-buy-button" onClick={buy}>Buy</button>
       }
       

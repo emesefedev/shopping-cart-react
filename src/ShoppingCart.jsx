@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
+
+import { useShoppingCartContext } from "./ShoppingCartContext";
 
 import ProductEdit from "./ProductEdit";
 
 export default function ShoppingCart() {
-  const [updateProductsToBuy] = useOutletContext()
-
-  const fakeProduct = {
-    id: 132, 
-    name: "ditto",
-    price: 40,
-    quantity: 2
-  }
+  // const [updateProductsToBuy] = useOutletContext()
+  const {products, updateQuantity} = useShoppingCartContext()
   
   return (
     <div className="p-32">
       <h1 className="mb-32">Shopping Cart</h1>
 
       <div className="products-list">
-        <ProductEdit product={fakeProduct} updateProductsToBuy={updateProductsToBuy}></ProductEdit>
+        
+        {Object.values(products).map((product) => {
+          return <ProductEdit
+            key={product.id} 
+            product={product} updateQuantity={updateQuantity}></ProductEdit>
+        })}
+        
       </div>
+
+      
 
       <Link to="/check">Check Order</Link>
     </div>

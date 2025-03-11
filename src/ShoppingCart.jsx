@@ -4,7 +4,7 @@ import { useShoppingCartContext } from "./ShoppingCartContext";
 
 export default function ShoppingCart() {
   
-  const {products, updateQuantity} = useShoppingCartContext()
+  const {products, updateQuantity, deleteProduct} = useShoppingCartContext()
 
   const hasProducts = Object.values(products).length > 0
   
@@ -18,7 +18,10 @@ export default function ShoppingCart() {
                   {Object.values(products).map((product) => {
                     return <ProductEdit
                       key={product.id} 
-                      product={product} updateQuantity={updateQuantity}></ProductEdit>
+                      product={product} 
+                      updateQuantity={updateQuantity}
+                      deleteProduct={deleteProduct}>
+                      </ProductEdit>
                     })}
                 </div>
                 <LinkWithBorder to="/check">Check Order</LinkWithBorder>

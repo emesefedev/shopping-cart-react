@@ -1,7 +1,8 @@
 import PlusMinus from "./PlusMinus"
+import DeleteButton from "./DeleteButton"
 
 
-export default function ProductEdit({product, updateQuantity}) {
+export default function ProductEdit({product, updateQuantity, deleteProduct}) {
   const quantity = product.quantity
 
   const increaseQuantity = () => {
@@ -18,6 +19,9 @@ export default function ProductEdit({product, updateQuantity}) {
       <p className="text-xl font-semibold capitalize min-w-32">{product.name}</p>
 
       <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity}></PlusMinus>  
+
+      <DeleteButton onClick={() => deleteProduct(product.id)}></DeleteButton>
+
     </div>  
   )
 }

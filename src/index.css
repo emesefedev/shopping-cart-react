@@ -52,62 +52,6 @@ h1 {
   border: 2px solid var(--tertiary-color);
 }
 
-/* HOME */
-
-.products-container {
-  display: grid;
-  gap: 32px;
-  
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.product-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-
-  background-color: var(--primary-color);
-  color: var(--background-color);
-
-  border-radius: 8px;
-
-  min-height: 400px;
-  padding: 24px;
-}
-
-.product-img {
-  min-width: 200px;
-}
-
-.product-title {
-  font-size: 1.3em;
-  font-weight: 600;
-
-  text-transform: capitalize;
-}
-
-.product-price {
-  font-size: 1.1em;
-}
-
-.product-buy-button {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
-  
-  border: none;
-  border-radius: 8px;
-
-  padding: 4px;
-  min-width: 50px;
-  min-height: 25px;
-}
-
-.product-buy-button:hover {
-  background-color: var(--tertiary-color);
-}
-
 /* SHOPPING CART */
 
 .products-list {

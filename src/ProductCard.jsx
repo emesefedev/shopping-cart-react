@@ -40,16 +40,19 @@ export default function ProductCard({pokemon, product}) {
   }
 
   return (
-    <div className="product-card">
-      <img className="product-img" src={pokemon.sprites.front_default} alt="top logo" />
-      <p className="product-title">{pokemon.name}</p>
-      <p className="product-price">{pokemon.weight}€</p>
+    <div className="flex flex-col items-center gap-2 bg-(--primary-color) text-(--background-color) rounded-lg p-6 min-h-100">
+      <img className="min-w-50" src={pokemon.sprites.front_default} alt="top logo" />
+      <p className="text-xl font-semibold capitalize">{pokemon.name}</p>
+      <p className="text-lg">{pokemon.weight}€</p>
 
       { (!product?.quantity && wantToBuy) || product?.quantity > 0
         ? <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity} buttonSize="24px"></PlusMinus>  
-        : <button className="product-buy-button" onClick={buy}>Buy</button>
+        : <button 
+            className="bg-(--secondary-color) hover:bg-(--tertiary-color) text-(--background-color) border-none rounded-lg p-1 min-w-12 min-h-6" 
+            onClick={buy}>
+              Buy
+          </button>
       }
-      
     </div>  
   )
 }

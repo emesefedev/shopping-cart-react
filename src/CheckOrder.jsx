@@ -4,7 +4,7 @@ import ProductCheck from "./ProductCheck"
 
 export default function CheckOrder() {
 
-  const {products} = useShoppingCartContext()
+  const {products, deleteAllProducts} = useShoppingCartContext()
 
   const hasProducts = Object.values(products).length > 0
 
@@ -30,7 +30,7 @@ export default function CheckOrder() {
                 <p className="text-lg">{totalPrice}€</p>
               </div>
 
-              <LinkWithBorder to="/success">Buy</LinkWithBorder>
+              <LinkWithBorder  onClick={deleteAllProducts} to="/success">Buy</LinkWithBorder>
             </>
           : <>
               <p>There are no products</p>

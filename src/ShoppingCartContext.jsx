@@ -59,12 +59,17 @@ export function ShoppingCartContextProvider({children}) {
     })
   }
 
+  function deleteAllProducts() {
+    setProducts({})
+  }
+
   const value = {
     products,
     totalProducts: countProducts(products),
     addProduct,
     updateQuantity,
-    deleteProduct
+    deleteProduct,
+    deleteAllProducts
   }
   
   return (

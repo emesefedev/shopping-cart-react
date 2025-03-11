@@ -51,7 +51,7 @@ export function ShoppingCartContextProvider({children}) {
     setProducts(prev => {
       const product = prev[productId]
       if(!product) {
-        return prev
+        return {...prev}
       }
 
       delete prev[productId]

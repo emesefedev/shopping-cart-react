@@ -9,10 +9,10 @@ export default function Home() {
   const { products } = useShoppingCartContext()
   
   return (
-    <div className="p-32">
-      <h1 className="mb-32">Products</h1>
+    <div className="p-8">
+      <h1>Products</h1>
 
-      <div className="products-container">
+      <div className="grid gap-8 grid-rows-2 grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))]">
         {availableProducts.map(it => (
           <ProductCard 
             key={it.id}

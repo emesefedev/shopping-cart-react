@@ -154,12 +154,6 @@ h1 {
   border: 2px solid var(--tertiary-color);
 }
 
-/* MARGIN */
-
-.ml-auto {
-  margin-left: auto;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #ffffff;

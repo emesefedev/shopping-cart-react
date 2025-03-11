@@ -1,6 +1,13 @@
 import EditButton from "./EditButton"
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCheck({product}) {
+
+  const navigate = useNavigate();
+
+  const goToShoppingCart = () => {
+      navigate("/buy");
+  };
 
   return (
     <div className="flex gap-6 items-center">
@@ -10,7 +17,7 @@ export default function ProductCheck({product}) {
 
       <p className="min-w-16">{product.quantity * product.price}€</p>
 
-      <EditButton onClick={() => {}}></EditButton>
+      <EditButton onClick={() => goToShoppingCart()}></EditButton>
     </div>  
   )
 }

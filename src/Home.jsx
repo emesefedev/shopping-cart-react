@@ -10,7 +10,7 @@ export default function Home() {
   
   return (
     <div className="p-8">
-      <h1>Products</h1>
+      <h1 className="mb-8">Products</h1>
 
       <div className="grid gap-8 grid-rows-2 grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))]">
         {availableProducts.map(it => (

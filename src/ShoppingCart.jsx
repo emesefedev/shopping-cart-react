@@ -12,7 +12,7 @@ export default function ShoppingCart() {
   
   return (
     <div className="p-8">
-      <h1>Shopping Cart</h1>
+      <h1 className="mb-8">Shopping Cart</h1>
         <div className="flex flex-col gap-5">
           {hasProducts 
             ? <> 

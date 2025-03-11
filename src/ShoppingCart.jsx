@@ -13,7 +13,7 @@ export default function ShoppingCart() {
   return (
     <div className="p-32">
       <h1 className="mb-32">Shopping Cart</h1>
-        <div className="">
+        <div className="flex">
           {hasProducts 
             ? <> 
                 <div className="products-list">

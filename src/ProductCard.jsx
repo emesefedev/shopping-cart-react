@@ -41,7 +41,7 @@ export default function ProductCard({pokemon, product}) {
 
   return (
     <div className="flex flex-col items-center gap-2 bg-(--primary-color) text-(--background-color) rounded-lg p-6 min-h-100">
-      <img className="min-w-50" src={pokemon.sprites.front_default} alt="top logo" />
+      <img className="min-w-50" src={pokemon.sprites.front_default} alt="product image" />
       <p className="text-xl font-semibold capitalize">{pokemon.name}</p>
       <p className="text-lg">{pokemon.weight}€</p>
 

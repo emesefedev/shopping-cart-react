@@ -11,12 +11,12 @@ export default function ShoppingCart() {
   const hasProducts = Object.values(products).length > 0
   
   return (
-    <div className="p-32">
-      <h1 className="mb-32">Shopping Cart</h1>
-        <div className="flex">
+    <div className="p-8">
+      <h1>Shopping Cart</h1>
+        <div className="flex flex-col gap-5">
           {hasProducts 
             ? <> 
-                <div className="products-list">
+                <div className="flex flex-col gap-2">
                   {Object.values(products).map((product) => {
                     return <ProductEdit
                       key={product.id} 

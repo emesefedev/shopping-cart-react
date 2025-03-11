@@ -14,8 +14,8 @@ export default function ProductEdit({product, updateQuantity}) {
 
 
   return (
-    <div className="product-item">
-      <p className="product-item-title">{product.name}</p>
+    <div className="flex gap-6 items-center">
+      <p className="text-xl font-semibold capitalize min-w-32">{product.name}</p>
 
       <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity}></PlusMinus>  
     </div>  

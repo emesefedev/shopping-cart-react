@@ -17,7 +17,7 @@ export default function ProductEdit({product, updateQuantity}) {
     <div className="product-item">
       <p className="product-item-title">{product.name}</p>
 
-      <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity} buttonSize="24px"></PlusMinus>  
+      <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity}></PlusMinus>  
     </div>  
   )
 }

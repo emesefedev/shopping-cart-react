@@ -46,7 +46,7 @@ export default function ProductCard({pokemon, product}) {
       <p className="text-lg">{pokemon.weight}€</p>
 
       { (!product?.quantity && wantToBuy) || product?.quantity > 0
-        ? <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity} buttonSize="24px"></PlusMinus>  
+        ? <PlusMinus amount={quantity} increase={increaseQuantity} decrease={decreaseQuantity}></PlusMinus>  
         : <button 
             className="bg-(--secondary-color) hover:bg-(--tertiary-color) text-(--background-color) border-none rounded-lg p-1 min-w-12 min-h-6" 
             onClick={buy}>

@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import LinkWithBorder from "./LinkWithBorder"
 
 export default function SuccessfulPurchase() {
   
     return (
       <div className="p-8">
         <h1 className="mb-8">Successful Purchase</h1>
-        <Link to="/">Home</Link>
+        <LinkWithBorder to="/">Home</LinkWithBorder>
       </div>
     )
   }

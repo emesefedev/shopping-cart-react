@@ -39,17 +39,6 @@ h1 {
   line-height: 1.1;
 }
 
-.link-border {
-  
-  border-radius: 8px;
-  padding: 4px;
-}
-
-.link-border:hover {
-  color: var(--tertiary-color);
-  border: 2px solid var(--tertiary-color);
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #ffffff;

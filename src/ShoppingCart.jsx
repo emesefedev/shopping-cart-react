@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
-
-import { useShoppingCartContext } from "./ShoppingCartContext";
-
+import LinkWithBorder from "./LinkWithBorder";
 import ProductEdit from "./ProductEdit";
+import { useShoppingCartContext } from "./ShoppingCartContext";
 
 export default function ShoppingCart() {
   
@@ -23,11 +21,11 @@ export default function ShoppingCart() {
                       product={product} updateQuantity={updateQuantity}></ProductEdit>
                     })}
                 </div>
-                <Link to="/check">Check Order</Link>
+                <LinkWithBorder to="/check">Check Order</LinkWithBorder>
               </>
             : <>
                 <p>There are no products</p>
-                <Link to="/">Find Products</Link>
+                <LinkWithBorder to="/">Find Products</LinkWithBorder>
               </>
           }
         

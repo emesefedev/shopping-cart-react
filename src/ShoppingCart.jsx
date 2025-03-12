@@ -1,6 +1,6 @@
-import LinkWithBorder from "./LinkWithBorder";
-import ProductEdit from "./ProductEdit";
-import { useShoppingCartContext } from "./ShoppingCartContext";
+import LinkWithBorder from "./components/LinkWithBorder"
+import ProductEdit from "./components/ProductEdit"
+import { useShoppingCartContext } from "./ShoppingCartContext"
 
 export default function ShoppingCart() {
   

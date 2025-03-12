@@ -1,4 +1,4 @@
-import LinkWithBorder from "./LinkWithBorder"
+import LinkWithBorder from "./components/LinkWithBorder"
 
 export default function SuccessfulPurchase() {
   

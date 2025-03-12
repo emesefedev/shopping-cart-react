@@ -1,6 +1,6 @@
-import LinkWithBorder from "./LinkWithBorder"
+import LinkWithBorder from "./components/LinkWithBorder"
 import { useShoppingCartContext } from "./ShoppingCartContext"
-import ProductCheck from "./ProductCheck"
+import ProductCheck from "./components/ProductCheck"
 
 export default function CheckOrder() {
 
